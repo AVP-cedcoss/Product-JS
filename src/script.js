@@ -34,15 +34,26 @@ function display()
     let out = "";
     for (let item of prodList)
     {
+        var tr = document.createElement("tr");
 
-        out = item.PID;
-        addElement(out);
-        out = item.PName;
-        addElement(out);
-        out = item.PPrice;
-        addElement(out);
+        var td1 = document.createElement("td");
+        var td2 = document.createElement("td");
+        var td3 = document.createElement("td");
+
+        // td1.innerHTML(item.PID);
+        var temp = item.PID;
+        console.log(temp);
+        td1.innerHTML = temp;
+        td2.innerHTML = item.PName;
+        td3.innerHTML = item.PPrice;
+
+        tr.appendChild(td1);
+        tr.appendChild(td2);
+        tr.appendChild(td3);
+
+        var table = document.getElementById("f-head");
+        table.appendChild(tr);
     }
-    // console.log(out);
 }
 
 //Add Element
