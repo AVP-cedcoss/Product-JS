@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products</title>
+    <link href="style.css" rel="stylesheet">
+</head>
+<body>
+    <div id="wrapper">
+        <div id="header">
+        </div>
+
+        <div id="main">
+            <form>
+                <div>
+                    <label for = "Product-ID">Product ID</label>
+                    <input id="pid" type="number" placeholder="0" required>
+                </div>
+                <div>
+                    <label for = "Product-Name"> Product Name</label>
+                    <input id="pname" type="text" placeholder="Product Name" required>
+                </div>
+                <div>
+                    <label for = "Product-Price">Product Price</label>
+                    <input id="pprice" type="number" placeholder="₹" required>
+                    
+                </div>
+                <div>
+                    <button id="add-Product" type="button">Add Product</button>
+                </div>
+            </form>
+         </div>
+
+        <div id="footer">
+            <table id="f-head">
+                <tr>
+                    <th>
+                        Product ID
+                    </th>
+                    <th>
+                        Product Name
+                    </th>
+                    <th>
+                        Product Price
+                    </th>
+                </tr>
+            </div>
+            <div id="f-output">
+
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
