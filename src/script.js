@@ -75,7 +75,7 @@ function display()
     var html = "";
 
     //Clearing the Table
-    table.innerHTML = ""
+    table.innerHTML = "";
 
     //Table Header
     table.innerHTML += '<tr>\
