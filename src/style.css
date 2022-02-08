@@ -58,14 +58,13 @@ body
 }
 #f-head
 {
-    width: 80%;
+    /* width: auto; */
     margin: auto;
     overflow: hidden;
 }
 #footer th
 {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    float: left;
     font-size: 16px;
     color: midnightblue;
     font-weight: 700;
