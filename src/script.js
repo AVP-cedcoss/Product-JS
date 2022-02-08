@@ -7,7 +7,7 @@ function submitForm()
 {
     pullValue();    //Pulling Value from the Input Fields
     clearFields();  //Clearing the Input Fields
-    display2();  //Display Function
+    display();  //Display Function
 }
 
 //Pull Value from the Form
@@ -68,94 +68,35 @@ function fetch(item)
 //Display Function
 function display()
 {
-    // For Each loop iterating through Object Array
-    for (let item of prodList)
-    {
-        //Calling the Fetch Funtion to fetch the Data for individual Element
-        let out = fetch(item);
-
-        //Creating Row
-        var tr = document.createElement("tr");
-
-        //Creating Cells
-        var td1 = document.createElement("td");
-        var td2 = document.createElement("td");
-        var td3 = document.createElement("td");
-
-        //Adding Data to the Table cell
-        td1.innerHTML = out[0];
-        td2.innerHTML = out[1];
-        td3.innerHTML = out[2];
-
-        //Adding Cells to the Row
-        tr.appendChild(td1);
-        tr.appendChild(td2);
-        tr.appendChild(td3);
-
-        //Accessing the Table by ID
-        var table = document.getElementById("f-head");
-
-        //Adding the row with Cells to the Parent Table
-        table.appendChild(tr);
-    }
-}
-
-function display2()
-{
-    var footerDiv = document.getElementById("footer");
-    var table = document.createElement('table');
-    table.setAttribute('id', 'f-head');
-    var tbody = document.createElement('tbody');
+    //Accessing Table Element in HTML
+    var table = document.getElementById('f-head');
+    
+    //Tempororary Variable to Add Rows
     var html = "";
-    //for (var i = 0; i < prodList.length; i++)
-    for (let item of prodList)
-    {
-        out = fetch(item);
-        html += '<tr>\
+
+    //Clearing the Table
+    table.innerHTML = ""
+
+    //Table Header
+    table.innerHTML += '<tr>\
             <th>Product ID\</th>\
             <th>Product Name\</th>\
             <th>Product Price\</th>\
         </tr>';
 
-        table.appendChild(html);
-        // html += '<tr>\
-        //     <td>'+out[0]+'\</td>\
-        //     <td>'+out[1]+'\</td>\
-        //     <td>'+out[2]+'\</td>\
-        // </tr>';
+    //Fetching the rows in Product List Array
+    for (let item of prodList)
+    {
+        //Fetching each Object one after another
+        out = fetch(item);
 
-        //Creating Row
-        var tr = document.createElement("tr");
-
-        //Creating Cells
-        var td1 = document.createElement("td");
-        var td2 = document.createElement("td");
-        var td3 = document.createElement("td");
-
-        //Adding Data to the Table cell
-        td1.innerHTML = out[0];
-        td2.innerHTML = out[1];
-        td3.innerHTML = out[2];
-
-        //Adding Cells to the Row
-        tr.appendChild(td1);
-        tr.appendChild(td2);
-        tr.appendChild(td3);
-
-        table.appendChild(tr);
+        html += '<tr>\
+            <td>'+out[0]+'\</td>\
+            <td>'+out[1]+'\</td>\
+            <td>'+out[2]+'\</td>\
+        </tr>';
     }
 
-    // tbody.appendChild(tr);
-    // table.appendChild(tbody);
-
-    // var footer = document.getElementById("footer");
-    footerDiv.appendChild(table);
-    // document.body.appendChild(footerDiv);
-    // For Each loop iterating through Object Array
-    // for (let item of prodList)
-    // {
-    //     //Calling the Fetch Funtion to fetch the Data for individual Element
-    //     let out = fetch(item);
-
-    // }
+    //Adding Rows to Table
+    table.innerHTML += html;
 }
